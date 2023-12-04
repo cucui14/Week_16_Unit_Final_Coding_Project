@@ -1,4 +1,4 @@
-import NavDropdown from "react-bootstrap/NavDropdown";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const UserNameAvatar = ({ post, deletePost, handleShowEditModal }) => {
     return ( 
@@ -13,12 +13,18 @@ const UserNameAvatar = ({ post, deletePost, handleShowEditModal }) => {
                 </div>
                 <div>
                     {post.name == 'Angel.Pureco' ?
-                        <NavDropdown className='my-2 pe-3' title="..." id="basic-nav-dropdown" drop="down-centered">
-                            <div className="d-flex justify-content-evenly">
-                                <button type="button" className="btn btn-outline-danger" onClick={() => deletePost(post.id)}>Delete</button>
-                                <button type="button" className="btn btn-outline-info" onClick={() => handleShowEditModal(post)}>Edit</button>
-                            </div>
-                        </NavDropdown>
+                        <Dropdown className="d-inline mx-2" drop='down-centered'>
+                            <Dropdown.Toggle className='border-0 bg-transparent text-dark' id="dropdown-autoclose-true">
+                            ...
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <div className="d-flex justify-content-evenly">
+                                    <button type="button" className="btn btn-outline-danger" onClick={() => deletePost(post.id)}>Delete</button>
+                                    <button type="button" className="btn btn-outline-info" onClick={() => handleShowEditModal(post)}>Edit</button>
+                                </div>
+                            </Dropdown.Menu>
+                        </Dropdown>
                         : <div></div>}
                 </div>
             </div>

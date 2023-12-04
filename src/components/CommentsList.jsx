@@ -3,7 +3,8 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const CommentsList = ({ post, deleteCommentFromPost, setNewComment, addNewCommentToPost, newComment }) => {
+const CommentsList = ({ post, deleteCommentFromPost, setNewComment, addNewCommentToPost, newComment, allComments, updateComment }) => {
+    
     return ( 
         <>
             <div>
@@ -23,10 +24,10 @@ const CommentsList = ({ post, deleteCommentFromPost, setNewComment, addNewCommen
                     Submit
                     </Button>
                 </InputGroup>
-                {post.comments.map((comment, index) => {
+                {allComments.map((comment, index) => {
                     return (
                         <div key={index} className="py-3 px-2">
-                            <Comment comment={comment} post={post} deleteCommentFromPost={deleteCommentFromPost} />
+                            <Comment comment={comment} post={post} deleteCommentFromPost={deleteCommentFromPost} updateComment={updateComment} />
                         </div>)
                 })}
             </div>

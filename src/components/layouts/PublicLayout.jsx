@@ -1,7 +1,6 @@
 import Header from '../Header';
 import Navigation from '../Navigation';
-import Login from '../Login';
-import Footer from '../Footer';
+import UserProfile from '../UserProfile';
 import Search from '../Search';
 import TopNavLinks from '../TopNavLinks';
 import NewPost from '../NewPost';
@@ -23,16 +22,17 @@ const PublicLayout = ({ children, addNewPost, setNewPost, newPost }) => {
             <Header>
                 <Navigation>
                     <TopNavLinks />
-                    <NewPost handleShowNewPostModal={handleShowNewPostModal} />
-                    <Login />
                     <Search />
+                    <div className=' py-2 d-flex flex-row-reverse justify-content-end flex-lg-row'>
+                        <NewPost handleShowNewPostModal={handleShowNewPostModal} />
+                        <UserProfile />
+                    </div>
                 </Navigation>
             </Header>
             <main className='mx-xl-5'>
                 <NewPostModal showNewPostModal={showNewPostModal} setShowNewPostModal={setShowNewPostModal} addNewPost={addNewPost} setNewPost={setNewPost} newPost={newPost} handleCloseNewPostModal={handleCloseNewPostModal} />
                     {children}    
                 </main>
-            <Footer />
         </>
      );
 }

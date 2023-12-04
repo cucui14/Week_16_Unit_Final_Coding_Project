@@ -26,11 +26,13 @@ const PostsList = ({ posts, deletePost, updatePost, setUpdatePost, showUpdateMod
             <PostOpenModal show={show} setShow={setShow} modalPost={modalPost} deleteCommentFromPost={deleteCommentFromPost} setNewComment={setNewComment} addNewCommentToPost={addNewCommentToPost} newComment={newComment} allComments={allComments} updateComment={updateComment} />
             <div className="row mx-0">
                 {posts.map((post, index) => {
-                    return (
+                    if (post.name == 'Angel.Pureco') {
+                        return (
                         <div key={index} className="col-sm-6 col-md-4 px-0 px-sm-1">
                             <Post post={post} handleShow={handleShow} handleModalPost={handleModalPost} deletePost={deletePost} handleShowEditModal={handleShowEditModal} />
                         </div>
                     )
+                    }
                 })}
             </div>
         </>
@@ -38,3 +40,4 @@ const PostsList = ({ posts, deletePost, updatePost, setUpdatePost, showUpdateMod
 }
  
 export default PostsList;
+
