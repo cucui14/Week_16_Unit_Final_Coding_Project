@@ -24,7 +24,7 @@ const PostsList = ({ posts, deletePost, updatePost, setUpdatePost, showUpdateMod
         <>
             <UpdatePostModal showUpdateModal={showUpdateModal} setShowUpdateModal={setShowUpdateModal} updatePost={updatePost} setUpdatePost={setUpdatePost} updateCurrentPost={updateCurrentPost} handleCloseUpdatePostModal={handleCloseUpdatePostModal} />
             <PostOpenModal show={show} setShow={setShow} modalPost={modalPost} deleteCommentFromPost={deleteCommentFromPost} setNewComment={setNewComment} addNewCommentToPost={addNewCommentToPost} newComment={newComment} allComments={allComments} updateComment={updateComment} />
-            <div className="row mx-0">
+            <article className="row mx-0">
                 {posts.map((post, index) => {
                     if (post.name == 'Angel.Pureco') {
                         return (
@@ -34,7 +34,7 @@ const PostsList = ({ posts, deletePost, updatePost, setUpdatePost, showUpdateMod
                     )
                     }
                 })}
-            </div>
+            </article>
         </>
     );
 }

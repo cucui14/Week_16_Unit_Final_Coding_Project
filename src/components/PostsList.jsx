@@ -27,9 +27,9 @@ const PostsList = ({ posts, deletePost, updatePost, setUpdatePost, showUpdateMod
             <div className="row mx-0">
                 {posts.map((post, index) => {
                     return (
-                        <div key={index} className="col-sm-6 col-md-4 px-0 px-sm-1">
+                        <article key={index} className="col-sm-6 col-md-4 px-0 px-sm-1">
                             <Post post={post} handleShow={handleShow} handleModalPost={handleModalPost} deletePost={deletePost} handleShowEditModal={handleShowEditModal} />
-                        </div>
+                        </article>
                     )
                 })}
             </div>

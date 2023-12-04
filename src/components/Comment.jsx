@@ -2,10 +2,6 @@ import { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 const Comment = ({ comment, post, deleteCommentFromPost, updateComment }) => {
-    //sets the useState for the comment been edited
-    const [isEditing, setIsEditing] = useState(false);
-    //sets the useState for the comment text being edited
-    const [editedText, setEditedText] = useState(comment.comment);
 
     //Function to format the date of the comment
     const formatDate = (inputDate) => {
@@ -18,6 +14,11 @@ const Comment = ({ comment, post, deleteCommentFromPost, updateComment }) => {
         const formattedDate = `${month}-${day}-${year}`;
         return formattedDate;
     };
+
+    //sets the useState for the comment been edited
+    const [isEditing, setIsEditing] = useState(false);
+    //sets the useState for the comment text being edited
+    const [editedText, setEditedText] = useState(comment.comment);
     //handles editing of the comment
     const handleEdit = () => {
         setIsEditing(true);
@@ -75,7 +76,7 @@ const Comment = ({ comment, post, deleteCommentFromPost, updateComment }) => {
                     ) : null}
                 </div>
             </div>
-            <p className='px-1 text-seconday'>{formatDate(comment.createdAt)}</p>
+            <time className='px-1 text-seconday'>{formatDate(comment.createdAt)}</time>
         </>
     );
 };

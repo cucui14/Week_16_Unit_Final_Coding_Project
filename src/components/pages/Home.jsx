@@ -4,7 +4,7 @@ const Home = ({ posts, deletePost, updatePost, setUpdatePost, showUpdateModal, s
 
     return ( 
         <>
-            <h2 className="fs-4 p-2">Timeline</h2>
+            <h1 className="fs-4 p-2">Timeline</h1>
             <PostsList posts={posts} deletePost={deletePost} updatePost={updatePost} setUpdatePost={setUpdatePost} showUpdateModal={showUpdateModal} setShowUpdateModal={setShowUpdateModal} handleShowEditModal={handleShowEditModal} updateCurrentPost={updateCurrentPost} handleCloseUpdatePostModal={handleCloseUpdatePostModal} deleteCommentFromPost={deleteCommentFromPost} setNewComment={setNewComment} addNewCommentToPost={addNewCommentToPost} newComment={newComment} getCommentsForSinglePost={getCommentsForSinglePost} allComments={allComments} updateComment={updateComment} />
         </>
      );

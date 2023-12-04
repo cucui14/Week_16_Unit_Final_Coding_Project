@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const ReadMore = ({ text, maxLength }) => {
+  const [isTextEmpty, setIsTextEmpty] = useState(text)
   //sets useState for the More button on the post text
   const [isTruncated, setIsTruncated] = useState(true);
   //handles the More button toggle
@@ -10,7 +11,8 @@ const ReadMore = ({ text, maxLength }) => {
 
   return (
     <div>
-      {isTruncated ? (
+      {isTextEmpty ? (
+        isTruncated ? (
         <p className='px-1'>
           {text.slice(0, maxLength)}
           <span>...</span>
@@ -20,6 +22,9 @@ const ReadMore = ({ text, maxLength }) => {
         <p className='px-1'>
             {text}
         </p>
+      )
+      ) : (
+          null
       )}
     </div>
   );
