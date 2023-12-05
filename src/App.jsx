@@ -63,6 +63,7 @@ function App() {
   //Adds a new post to the API
   const addNewPost = (e) => {
     e.preventDefault();
+    console.log(newPost);
 
     fetch(`${POSTS_API}/post/`, {
       method: 'POST',
