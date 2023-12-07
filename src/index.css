@@ -14,3 +14,7 @@
 .button-hover:hover {
     color: #2b2f32;
 }
+
+.liked {
+    color: red;
+}
